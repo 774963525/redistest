@@ -8,24 +8,18 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-public class ProductService {
+public class ProductFromMysql {
     @Autowired
     private ProductMapper mapper;
 
-    public List<Product> showAll(){
-        return mapper.showAll();
+//    程序运行第一步:将mysql的商品表插入redis
+    public List showAll(){
+        List<Product> list = mapper.showAll();
+        return list;
     }
     public Product findOne( int id ){
         return mapper.showOne(id);
     }
 
-    public returnResult insert(String productName,int roductSku,String content){
-        try{
-            mapper.insert(productName,roductSku,content);
-            return new returnResult(true,"插入成功");
-        }catch(Exception e){
-            return new returnResult(false,"插入失败");
-        }
 
-    }
 }

@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class Product {
     private int id ;
-    private String productName;
+    private int productId;
     private int productSku ;
     private String content;
 
@@ -17,12 +17,12 @@ public class Product {
         this.id = id;
     }
 
-    public String getProductName() {
-        return productName;
+    public int getProductId() {
+        return productId;
     }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
+    public void setProductId(int productId) {
+        this.productId = productId;
     }
 
     public int getProductSku() {
